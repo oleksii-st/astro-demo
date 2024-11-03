@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  body {
+    max-width: 100%;
+    background: #ffffff;
+    color: #1d1f21;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1504px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    @media screen and (min-width: 768px) {
+      padding: 0 32px;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000;
+  }
+
+  *:not(.input):focus-visible {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+  }
+
+  .text-link {
+    @apply underline underline-offset-2 hover:no-underline;
+  }
+
+  .rich-text a {
+    @apply text-link;
+  }
+
+  .rich-text-big p {
+    @apply text-2xl mb-2;
+  }
+
+  .prose {
+    @apply text-inherit;
+  }
+
+  .prose p {
+    @apply mt-0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-center;
+  }
+
+  .prose h1,
+  .prose .h1 {
+    @apply text-4xl sm:text-5xl md:text-7xl;
+  }
+
+  .prose h2,
+  .prose .h2 {
+    @apply text-4xl sm:text-5xl;
+  }
+
+  .prose h3,
+  .prose .h3 {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  .prose h4,
+  .prose .h4 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  .prose h5,
+  .prose .h4 {
+    @apply text-xl sm:text-2xl;
+  }
+
+  .prose h6,
+  .prose .h6 {
+    @apply text-base sm:text-xl;
+  }
+}

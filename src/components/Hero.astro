@@ -1,0 +1,37 @@
+---
+import image from "@public/media/hero-samurai.png";
+import { Image } from "astro:assets";
+
+import { cn } from "@/utils/cn";
+import { WIDTHS } from "@/utils/widths";
+---
+
+<section class="my-5 sm:my-8">
+  <div class="container">
+    <div
+      class={cn(
+        "max-w-[500px] mx-auto flex flex-col gap-4",
+        "sm:max-w-full sm:flex-row sm:gap-8 sm:items-center",
+        "md:gap-14",
+      )}
+    >
+      <div class="sm:w-[calc(50%-16px)]">
+        <Image
+          class="w-full rounded-full my-0"
+          src={image}
+          widths={WIDTHS}
+          alt="Samurai"
+          width={414}
+          height={414}
+          sizes="(min-width: 768px) 50vw, (min-width: 1440px) 692px, 100vw"
+          format="webp"
+          loading="eager"
+        />
+      </div>
+
+      <div class={cn("text-center", "sm:text-left sm:w-[calc(50%-16px)]")}>
+        <h1 class={cn("h1 mb-4", "sm:md-8 sm:text-left")}>Just another hero</h1>
+      </div>
+    </div>
+  </div>
+</section>

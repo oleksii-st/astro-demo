@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/utils/cn";
+
+interface Props extends HTMLAttributes<"a"> {}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<a
+  href="#main"
+  class={cn(
+    "absolute top-2 left-2 p-4 bg-[var(--background-color)] text-text translate-y-[calc(-100%-8px)] transform-all duration-300",
+    "focus-visible:translate-y-0",
+    className,
+  )}
+  {...props}
+>
+  Skip to main content
+</a>

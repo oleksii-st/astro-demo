@@ -1,0 +1,43 @@
+---
+import "@/styles/main.css";
+import "@fontsource/geist-sans";
+
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import { cn } from "@/utils/cn";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Astro demo", description = "This is astro demo" } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/media/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main
+      class={cn(
+        "prose prose-basic prose-code:before:content-none prose-code:after:content-none prose-code:px-0.5 prose-code:py-1 prose-h2:mt-0",
+        "flex-auto flex flex-col max-w-full",
+      )}
+      id="main"
+    >
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
