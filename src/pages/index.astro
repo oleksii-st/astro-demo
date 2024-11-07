@@ -1,12 +1,17 @@
 ---
+import { getCollection } from "astro:content";
+
 import Grid from "@/components/Grid.astro";
 import Hero from "@/components/Hero.astro";
 import Story from "@/components/Story.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const home = await getCollection("home");
+const hero = home.find(({ slug }) => slug === "hero")?.data;
 ---
 
 <Layout title="Astro demo - Home" description="This is the home page">
-  <Hero />
+  {hero && <Hero {...hero} />}
   <Grid />
   <Story />
 </Layout>
