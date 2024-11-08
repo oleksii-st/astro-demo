@@ -21,4 +21,9 @@ const grid = defineCollection({
   }),
 });
 
-export const collections = { hero, grid };
+const richText = defineCollection({
+  type: "content",
+  schema: z.object({}),
+});
+
+export const collections = { hero, grid, richText };

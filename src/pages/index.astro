@@ -1,18 +1,27 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
 import Grid from "@/components/Grid.astro";
 import Hero from "@/components/Hero.astro";
-import Story from "@/components/Story.astro";
 import Layout from "@/layouts/Layout.astro";
+
+import Story from "../components/RichText.astro";
 
 const home = await getCollection("home");
 const hero = home.find(({ slug }) => slug === "hero")?.data;
 const grid = home.find(({ slug }) => slug === "grid")?.data;
+const richText = await getEntry("home", "richtext");
+const { Content } = await richText.render();
 ---
 
 <Layout title="Astro demo - Home" description="This is the home page">
   {hero && <Hero {...hero} />}
   {grid && <Grid {...grid} />}
-  <Story />
+  {
+    richText && (
+      <Story>
+        <Content />
+      </Story>
+    )
+  }
 </Layout>
