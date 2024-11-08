@@ -8,4 +8,17 @@ const hero = defineCollection({
   }),
 });
 
-export const collections = { hero };
+const grid = defineCollection({
+  type: "content",
+  schema: z.object({
+    heading: z.string(),
+    images: z.array(
+      z.object({
+        path: z.string(),
+        alt: z.string(),
+      }),
+    ),
+  }),
+});
+
+export const collections = { hero, grid };

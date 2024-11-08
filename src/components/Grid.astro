@@ -1,37 +1,46 @@
 ---
-import grid1 from "@public/media/grid-1.png";
-import grid2 from "@public/media/grid-2.png";
-import grid3 from "@public/media/grid-3.png";
-import grid4 from "@public/media/grid-4.png";
-import grid5 from "@public/media/grid-5.png";
-import grid6 from "@public/media/grid-6.png";
-import grid7 from "@public/media/grid-7.png";
-import grid8 from "@public/media/grid-8.png";
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 import { cn } from "@/utils/cn";
 
 import { WIDTHS } from "../utils/widths";
 
-const images = [
-  { src: grid1, alt: "Rabbit ninja" },
-  { src: grid2, alt: "Squirrel ninja" },
-  { src: grid3, alt: "Bunny ninja" },
-  { src: grid4, alt: "Hamster ninja" },
-  { src: grid5, alt: "Rabbit ninja" },
-  { src: grid6, alt: "Hamster ninja" },
-  { src: grid7, alt: "Kitten ninja" },
-  { src: grid8, alt: "Mouse ninja" },
-];
+interface Props {
+  heading: string;
+  images: {
+    path: string;
+    alt: string;
+  }[];
+}
+
+const { heading, images } = Astro.props;
+
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/public/media/*",
+);
+
+const imagesArray = images.map(({ alt, path }) => {
+  const image = allImages[path];
+
+  if (!image) {
+    throw new Error(`Can't find image /public/media/${image}`);
+  }
+
+  return {
+    src: image(),
+    alt,
+  };
+});
 ---
 
 <section class="my-5 sm:my-8">
   <div class="container">
-    <h2>Grid</h2>
+    <h2>{heading}</h2>
 
     <div class="flex gap-6 flex-wrap items-center">
       {
-        images.map(({ src, alt }) => (
+        imagesArray.map(({ src, alt }) => (
           <div class={cn("w-[calc(50%-12px)] sm:w-[calc(25%-18px)]")}>
             <Image
               class="m-0 w-full aspect-square rounded-2xl"

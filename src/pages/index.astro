@@ -8,10 +8,11 @@ import Layout from "@/layouts/Layout.astro";
 
 const home = await getCollection("home");
 const hero = home.find(({ slug }) => slug === "hero")?.data;
+const grid = home.find(({ slug }) => slug === "grid")?.data;
 ---
 
 <Layout title="Astro demo - Home" description="This is the home page">
   {hero && <Hero {...hero} />}
-  <Grid />
+  {grid && <Grid {...grid} />}
   <Story />
 </Layout>
