@@ -33,4 +33,11 @@ const header = defineCollection({
   }),
 });
 
-export const collections = { hero, grid, richText, header };
+const footer = defineCollection({
+  type: "content",
+  schema: z.object({
+    copyright: z.string(),
+  }),
+});
+
+export const collections = { hero, grid, richText, header, footer };

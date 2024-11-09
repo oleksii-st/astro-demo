@@ -20,6 +20,9 @@ const globals = await getCollection("globals");
 const header = globals.find(({ slug }) => slug === "header")?.data ?? {
   logo: "",
 };
+const footer = globals.find(({ slug }) => slug === "footer")?.data ?? {
+  copyright: "",
+};
 ---
 
 <!doctype html>
@@ -45,6 +48,6 @@ const header = globals.find(({ slug }) => slug === "header")?.data ?? {
     >
       <slot />
     </main>
-    <Footer />
+    <Footer {...footer} />
   </body>
 </html>
