@@ -1,11 +1,20 @@
 ---
+import { getCollection } from "astro:content";
+
 import ErrorMessage from "@/components/ErrorMessage.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const globals = await getCollection("globals");
+const notFound = globals.find(({ slug }) => slug === "notfound")?.data;
+
+if (!notFound) {
+  throw new Error("404 page content is not set!");
+}
 ---
 
 <Layout
   title="404 - Page not found"
   description="It looks like this page does not exist"
 >
-  <ErrorMessage />
+  {notFound && <ErrorMessage {...notFound} />}
 </Layout>

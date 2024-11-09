@@ -1,10 +1,17 @@
 ---
 import { cn } from "@/utils/cn";
+
+interface Props {
+  heading: string;
+  description: string;
+}
+
+const { heading, description } = Astro.props;
 ---
 
 <div class={cn("my-auto")}>
   <div class="container">
-    <h1 class={cn("text-center mb-4 text-6xl")}>404</h1>
-    <p class="text-center">Page not found</p>
+    <h1 class={cn("text-center mb-4 text-6xl")}>{heading}</h1>
+    <p class="text-center">{description}</p>
   </div>
 </div>

@@ -40,4 +40,12 @@ const footer = defineCollection({
   }),
 });
 
-export const collections = { hero, grid, richText, header, footer };
+const notFound = defineCollection({
+  type: "content",
+  schema: z.object({
+    heading: z.string(),
+    description: z.string(),
+  }),
+});
+
+export const collections = { hero, grid, richText, header, footer, notFound };
