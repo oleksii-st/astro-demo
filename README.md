@@ -13,7 +13,7 @@ A web application built with [Astro](https://astro.build), TypeScript, and Tailw
 
 ## 📦 Prerequisites
 
-- Node.js (LTS version recommended)
+- Node.js >= 20
 - Yarn 4.5.1 (project uses Yarn as package manager)
 
 ## 🛠️ Installation
