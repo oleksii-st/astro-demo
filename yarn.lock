@@ -1817,7 +1817,7 @@ __metadata:
     "@tailwindcss/typography": "npm:^0.5.15"
     "@typescript-eslint/eslint-plugin": "npm:^8.13.0"
     "@typescript-eslint/parser": "npm:^8.13.0"
-    astro: "npm:^4.16.8"
+    astro: "npm:^4.16.10"
     astro-robots-txt: "npm:^1.0.0"
     clsx: "npm:^2.1.1"
     eslint: "npm:^9.14.0"
@@ -1864,9 +1864,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^4.16.8":
-  version: 4.16.8
-  resolution: "astro@npm:4.16.8"
+"astro@npm:^4.16.10":
+  version: 4.16.10
+  resolution: "astro@npm:4.16.10"
   dependencies:
     "@astrojs/compiler": "npm:^2.10.3"
     "@astrojs/internal-helpers": "npm:0.4.1"
@@ -1910,7 +1910,7 @@ __metadata:
     micromatch: "npm:^4.0.8"
     mrmime: "npm:^2.0.0"
     neotraverse: "npm:^0.6.18"
-    ora: "npm:^8.1.0"
+    ora: "npm:^8.1.1"
     p-limit: "npm:^6.1.0"
     p-queue: "npm:^8.0.1"
     preferred-pm: "npm:^4.0.0"
@@ -1936,7 +1936,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: 10c0/692c19970c5dfb5029a19f57556dcd9070645c01a5d8b5fa8e593c317c3e289c24cda19ea5a556e4a381d7c4b7d32060217c4d178c49834e0d31206b8c95e761
+  checksum: 10c0/41c47d7080ba86fa8690b16089efab22d8b4d9de59dccb4fc349abf2c62398f0bfd034992a42ef421ebec308f2682ed6aadd038ab714512117786d1d3965855f
   languageName: node
   linkType: hard
 
@@ -4683,7 +4683,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ora@npm:^8.1.0":
+"ora@npm:^8.1.1":
   version: 8.1.1
   resolution: "ora@npm:8.1.1"
   dependencies:
