@@ -26,4 +26,11 @@ const richText = defineCollection({
   schema: z.object({}),
 });
 
-export const collections = { hero, grid, richText };
+const header = defineCollection({
+  type: "content",
+  schema: z.object({
+    logo: z.string(),
+  }),
+});
+
+export const collections = { hero, grid, richText, header };

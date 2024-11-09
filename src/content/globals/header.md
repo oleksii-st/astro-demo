@@ -1,0 +1,3 @@
+---
+logo: "ASTRO_DEMO"
+---
