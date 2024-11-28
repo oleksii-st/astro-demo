@@ -21,7 +21,7 @@
     "astro": "^4.16.14",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.5",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.2.1",
