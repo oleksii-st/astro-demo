@@ -11,7 +11,8 @@ const home = await getCollection("home");
 const hero = home.find(({ slug }) => slug === "hero")?.data;
 const grid = home.find(({ slug }) => slug === "grid")?.data;
 const richText = await getEntry("home", "richtext");
-const { Content } = await richText.render();
+const content = (richText as unknown as { rendered: { html: string } }).rendered
+  .html;
 ---
 
 <Layout title="Astro demo - Home" description="This is the home page">
@@ -20,7 +21,7 @@ const { Content } = await richText.render();
   {
     richText && (
       <Story>
-        <Content />
+        <div set:html={content} />
       </Story>
     )
   }
