@@ -18,7 +18,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "@typescript-eslint/eslint-plugin": "^8.15.0",
     "@typescript-eslint/parser": "^8.16.0",
-    "astro": "^4.16.14",
+    "astro": "^5.0.3",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.5",
     "typescript": "^5.7.2"
