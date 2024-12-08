@@ -1,7 +1,8 @@
+import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const hero = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/hero.md", base: "./src/content/home" }),
   schema: z.object({
     heading: z.string(),
     imagePath: z.string(),
@@ -9,7 +10,7 @@ const hero = defineCollection({
 });
 
 const grid = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/grid.md", base: "./src/content/home" }),
   schema: z.object({
     heading: z.string(),
     images: z.array(
@@ -22,26 +23,26 @@ const grid = defineCollection({
 });
 
 const richText = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/richText.md", base: "./src/content/home" }),
   schema: z.object({}),
 });
 
 const header = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/header.md", base: "./src/content/globals" }),
   schema: z.object({
     logo: z.string(),
   }),
 });
 
 const footer = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/header.md", base: "./src/content/footer" }),
   schema: z.object({
     copyright: z.string(),
   }),
 });
 
 const notFound = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/notFound.md", base: "./src/content/notFound" }),
   schema: z.object({
     heading: z.string(),
     description: z.string(),

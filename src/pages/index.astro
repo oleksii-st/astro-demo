@@ -1,5 +1,6 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getEntry } from "astro:content";
+import { render } from "astro:content";
 
 import Grid from "@/components/Grid.astro";
 import Hero from "@/components/Hero.astro";
@@ -7,11 +8,11 @@ import Layout from "@/layouts/Layout.astro";
 
 import Story from "../components/RichText.astro";
 
-const home = await getCollection("home");
-const hero = home.find(({ slug }) => slug === "hero")?.data;
-const grid = home.find(({ slug }) => slug === "grid")?.data;
+const hero = (await getEntry("home", "hero"))?.data;
+const grid = (await getEntry("home", "grid"))?.data;
 const richText = await getEntry("home", "richtext");
-const { Content } = await richText.render();
+
+const { Content = "" } = richText ? await render(richText) : { Content: "" };
 ---
 
 <Layout title="Astro demo - Home" description="This is the home page">

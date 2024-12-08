@@ -2,7 +2,7 @@
 import "@/styles/main.css";
 import "@fontsource/geist-sans";
 
-import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
 
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
@@ -16,11 +16,10 @@ interface Props {
 const { title = "Astro demo", description = "This is astro demo" } =
   Astro.props;
 
-const globals = await getCollection("globals");
-const header = globals.find(({ slug }) => slug === "header")?.data ?? {
+const header = (await getEntry("globals", "header"))?.data ?? {
   logo: "",
 };
-const footer = globals.find(({ slug }) => slug === "footer")?.data ?? {
+const footer = (await getEntry("globals", "footer"))?.data ?? {
   copyright: "",
 };
 ---
