@@ -17,7 +17,7 @@
     "@fontsource/geist-sans": "^5.1.0",
     "@tailwindcss/typography": "^0.5.15",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
-    "@typescript-eslint/parser": "^8.16.0",
+    "@typescript-eslint/parser": "^8.17.0",
     "astro": "^5.0.3",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.5",
